@@ -28,7 +28,7 @@ COPY setup.sh /root/setup.sh
 COPY .devcontainer/onCreate.sh /root/onCreate.sh
 RUN chmod 777 /root/setup.sh /root/onCreate.sh
 
-# Copy the add package (this is not used in the development container and is removed by the setup.sh script):
+# Copy the package files (this is not used in the development container and is removed by the setup.sh script):
 COPY fastui_demo /root/app/fastui_demo
 COPY pyproject.toml /root/app/pyproject.toml
 COPY README.md /root/app/README.md
