@@ -1,0 +1,40 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/docker-existing-dockerfile
+{
+	"name": "dev-fastui-demo",
+	"context": "..",
+	"dockerFile": "../Dockerfile",
+	"build": {
+		"args": {
+			"DEVELOPMENT": "1"
+		}
+	},
+	"forwardPorts": [8000],
+	"onCreateCommand": "/root/onCreate.sh",
+	"runArgs": ["-v", "//var/run/docker.sock:/var/run/docker.sock", "-v", "/usr/local/bin/docker:/usr/bin/docker"],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.pylance",
+				"ms-python.flake8",
+				"ms-python.pylint",
+				"ms-toolsai.jupyter",
+				"github.copilot-nightly",
+				"ryanluker.vscode-coverage-gutters",
+				"njpwerner.autodocstring"
+			],
+			"settings": {
+				"editor.formatOnSave": false,
+				"python.defaultInterpreterPath": "./venv/bin/python",
+				"python.languageServer": "Pylance",
+				"python.testing.pytestArgs": [
+					"tests"
+				],
+				"python.testing.unittestEnabled": false,
+				"python.testing.pytestEnabled": true,
+				"autoDocstring.docstringFormat": "numpy"
+			}
+		}
+	}
+}
