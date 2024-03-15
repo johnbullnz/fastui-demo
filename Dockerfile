@@ -36,7 +36,6 @@ COPY README.md /root/app/README.md
 # Update pip and setuptools:
 RUN python3 -m pip install -U pip setuptools wheel
 
-# Run setup.sh:
-RUN /root/setup.sh
+RUN if [ "$DEVELOPMENT" == "1" ]; then rm -fr /root/app; else cd /root/app; python3 -m pip install .; fi
 
-CMD [ "bash" ]
+CMD [ "uvicorn", "--host", "0.0.0.0", "fastui_demo:app"]
