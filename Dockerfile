@@ -10,7 +10,7 @@ ENV DEVELOPMENT=${DEVELOPMENT}
 ENV SHELL=bash
 
 # Copy custom .bashrc to set colorised terminal:
-COPY .devcontainer/.bashrc /root/.bashrc
+COPY .bashrc /root/.bashrc
 
 # Stop Python from generating .pyc files in the container and turn off buffering:
 ENV PYTHONFAULTHANDLER=1 \
