@@ -28,7 +28,7 @@ COPY .devcontainer/onCreate.sh /root/onCreate.sh
 RUN chmod 777 /root/onCreate.sh
 
 # Copy the package files (this is not used in the development container and is removed by the setup.sh script):
-COPY fastui_demo /root/app/fastui_demo
+COPY fastui_app /root/app/fastui_app
 COPY pyproject.toml /root/app/pyproject.toml
 COPY README.md /root/app/README.md
 
@@ -37,4 +37,4 @@ RUN python3 -m pip install -U pip setuptools wheel
 
 RUN if [ "$DEVELOPMENT" == "1" ]; then rm -fr /root/app; else cd /root/app; python3 -m pip install .; fi
 
-CMD [ "uvicorn", "--host", "0.0.0.0", "fastui_demo:app"]
+CMD [ "uvicorn", "--host", "0.0.0.0", "fastui_app:app"]

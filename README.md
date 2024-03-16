@@ -1,4 +1,4 @@
-# FastUI Demo
+# FastUI App
 
 Dev container to run the [FastUI](https://github.com/pydantic/FastUI) demo app.
 

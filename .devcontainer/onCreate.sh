@@ -19,7 +19,7 @@ export GIT_EDITOR=nano
 python3 -m pip install poetry
 
 # Create a virtual environment for development:
-cd /workspaces/fastui-demo
+cd /workspaces/fastui-app
 python3 -m venv venv
 source venv/bin/activate
 
