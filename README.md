@@ -1,29 +1,26 @@
-# FastUI App
+# FastUI App Template
 
-Dev container to run the [FastUI](https://github.com/pydantic/FastUI) demo app.
-
-## Running as dev container
+## Running as Dev container
 
 Open the dev container in VS Code and run the following command in the terminal:
 
 ```bash
-uvicorn fastui_demo:app --reload --reload-dir .
+uvicorn fastui_app:app --reload --reload-dir .
 ```
 
 Navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-## Building and running as Docker container
+## Running in Docker container
 
 Build the Docker image:
 
 ```bash
-docker build -t fastui-demo .
+docker build -t fastui-app .
 ```
 
 Run the Docker container:
 
 ```bash
-docker run -it -p 8000:8000 --rm fastui-demo:latest
+docker run -it -p 8000:8000 --rm fastui-app:latest
 ```
-
 Navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000).
